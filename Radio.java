@@ -1,5 +1,5 @@
 /**
- * @author Carlo David Sanchinelli
+ * @author Carlo David Sanchinelli, Juan Pablo Zea, Luis Najera
  * @version 13.07.16
  */
 public class Radio implements iRadio{
@@ -62,33 +62,35 @@ public class Radio implements iRadio{
 
     @Override
     public void Forward(){
-        if(frequency.equals("am") && station<1610){
+        if(frequency.equals("am") && station<=1610){
             if(station==1610){
                 station = 520;
             }
             station = station + 10;
         }
-        if(frequency.equals("fm") && station<107.9){
+        if(frequency.equals("fm") && station<=107.9){
             if(station==107.9){
                 station = 87.7;
             }
             station = station + 0.2;
+            station = Math.round(station *100.0) / 100.0;
         }
     }
 
     @Override
     public void Backward(){
-        if(frequency.equals("am") && station>530){
+        if(frequency.equals("am") && station>=530){
             if(station==530){
                 station = 1620;
             }
             station = station - 10;
         }
-        if(frequency.equals("fm") && station>87.9){
+        if(frequency.equals("fm") && station>=87.9){
             if(station==87.9){
                 station = 108.1;
             }
             station = station - 0.2;
+            station = Math.round(station *100.0) / 100.0;
         }
     }
 
@@ -104,7 +106,8 @@ public class Radio implements iRadio{
     }
 
     @Override
-    public String toString(){
-        return "Radio{" + "state=" + state + ", frequency=" + frequency + ", station=" + station + '}';
+    public String toString(){ 
+        String texto = "ESTADO: \nFrecuencia:" + frequency + "\nEstacion:" + station + "\n";
+        return texto;
     }
 }
