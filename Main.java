@@ -14,7 +14,6 @@ public class HDT1{
         
         System.out.println("BIENVENIDOS A LA SUPER RADIO UVG");
 	System.out.println("Ingrese ON para encender y OFF para apagar la radio.");
-	System.out.println("ESTADO: La radio esta APAGADA.\n");
         while (run==true){     
             while (radio.isOn() == true){
                 String toString = radio.toString();
@@ -22,14 +21,14 @@ public class HDT1{
                 System.out.println("Ingrese un comando:");
                 String comando = teclado.nextLine();
                 if(comando.equals("OFF")){
-                    radio.Off();
+                    radio.OnOff();
                 }
                 if(comando.equals("am")){
-                    radio.setFrequency(comando);
+                    radio.setFrequency("am");
                     radio.setStation(1); 
                 }
                 if(comando.equals("fm")){
-                    radio.setFrequency(comando);
+                    radio.setFrequency("fm");
                     radio.setStation(1);
                 }
                 if(comando.equals("1")){
@@ -80,10 +79,10 @@ public class HDT1{
                     int position = Integer.parseInt(comando);
                     radio.setStation(position);
                 }
-                if(comando.equals("forward")){
+                if(comando.equals("f")){
                     radio.Forward();
                 }
-                if(comando.equals("backward")){
+                if(comando.equals("b")){
                     radio.Backward();
                 }
                 if(comando.equals("store 1")){
@@ -125,14 +124,12 @@ public class HDT1{
                 
             }
             while (radio.isOn() == false){
+                System.out.println("ESTADO: La radio esta APAGADA.\n");
                 System.out.println("Ingrese un comando:");
                 String comando2 = teclado.nextLine();
                 if(comando2.equals("ON")){
-                    radio.On();
+                    radio.OnOff();
                     System.out.println("ESTADO: La radio esta ENCENDIDA.\n");
-                }
-                if(comando2.equals("OFF")){
-                    radio.Off();
                 }
             }
         }
