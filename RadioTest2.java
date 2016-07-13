@@ -1,15 +1,10 @@
 /**
  * @author Carlo David Sanchinelli, Juan Pablo Zea, Luis Najera
- * @version 13.07.16
+ * @version 14.07.16
  */
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 
 public class RadioTest2 {
     
@@ -26,8 +21,6 @@ public class RadioTest2 {
         Radio instance = new Radio(true);
         String expResult = "87.9";
         String result = instance.getStation();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         if (!result.equals(expResult)){
             fail("The test case is a prototype.");
         }
@@ -43,7 +36,6 @@ public class RadioTest2 {
         int position = 1;
         Radio instance = new Radio(true);
         instance.setStation(position);
-        // TODO review the generated test code and remove the default call to fail.
         if (position != 1){
             fail("The test case is a prototype.");
         }
@@ -60,12 +52,9 @@ public class RadioTest2 {
         int position = 2;
         Radio instance = new Radio(true);
         instance.setMemory(position);
-        // TODO review the generated test code and remove the default call to fail.
         if (position >12){
             fail("The test case is a prototype.");
         }
     }
-
-    
-    
+   
 }
