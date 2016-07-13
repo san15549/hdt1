@@ -3,23 +3,23 @@
  * @version 13.07.16
  */
 public interface iRadio{ 
-    void On();
-	
-    void Off();
+    public void OnOff();
        
-    boolean isOn();
+    public boolean isOn();
 
-    String getFrequency();
+    public String getFrequency();
 	
-    void setFrequency(String frequency);
+    public void setFrequency(String frequency);
 	
-    String getStation();
+    public String getStation();
 	
-    void setStation(int position);
+    public void setStation(int position);
 	
-    void Forward();
+    public void Forward();
 	
-    void Backward();
+    public void Backward();
 	
-    void setMemory(int position);
+    public void setMemory(int position);
+    
+    public String toString();
 }
