@@ -1,11 +1,8 @@
 /**
  * @author Carlo David Sanchinelli, Juan Pablo Zea, Luis Najera
- * @version 13.07.16
+ * @version 14.07.16
  */
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -25,9 +22,8 @@ public class RadioTest {
         Radio instance = new Radio(true);
         boolean expResult = true;
         boolean result = instance.isOn();
-        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        if(result != true){
+        if(result != expResult){
             fail("The test case is a prototype.");
         }
         
@@ -42,8 +38,6 @@ public class RadioTest {
         Radio instance = new Radio(true);
         String expResult = "fm";
         String result = instance.getFrequency();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         if (!result.equals(expResult)){
             fail("The test case is a prototype.");
         }
@@ -59,7 +53,6 @@ public class RadioTest {
         String frequency = "fm";
         Radio instance = new Radio(true);
         instance.setFrequency(frequency);
-        // TODO review the generated test code and remove the default call to fail.
         if (!frequency.equals("fm")){
             fail("The test case is a prototype.");
         }
