@@ -1,7 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @author Carlo David Sanchinelli, Juan Pablo Zea, Luis Najera
+ * @version 13.07.16
  */
 
 import org.junit.After;
@@ -11,10 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Luis Nájera
- */
+
 public class RadioTest2 {
     
     public RadioTest2() {
