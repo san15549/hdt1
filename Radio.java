@@ -18,13 +18,8 @@ public class Radio implements iRadio{
     }
 //------------------------------------------------------------------------------
     @Override
-    public void On(){
-        state = true;
-    }
-
-    @Override
-    public void Off(){
-        state = false;
+    public void OnOff(){
+        state = !state;
     }
 
     @Override
