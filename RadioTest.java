@@ -1,4 +1,7 @@
-
+/**
+ * @author Carlo David Sanchinelli, Juan Pablo Zea, Luis Najera
+ * @version 13.07.16
+ */
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -6,10 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Luis Nájera
- */
+
 public class RadioTest {
     
     public RadioTest() {
