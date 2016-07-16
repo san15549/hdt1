@@ -12,7 +12,7 @@ public class HDT1{
         Radio radio = new Radio(false);
         boolean run = true;
         
-        System.out.println("BIENVENIDOS A LA SUPER RADIO UVG");
+        System.out.println("BIENVENIDOS A LA RADIO CALUJU");
 	System.out.println("Ingrese ON para encender y OFF para apagar la radio.");
         while (run==true){     
             while (radio.isOn() == true){
@@ -124,11 +124,13 @@ public class HDT1{
                 
             }
             while (radio.isOn() == false){
+                System.out.println("Hasta Pronto Usuario, nos vemos luego.\n")
                 System.out.println("ESTADO: La radio esta APAGADA.\n");
                 System.out.println("Ingrese un comando:");
                 String comando2 = teclado.nextLine();
                 if(comando2.equals("ON")){
                     radio.OnOff();
+                    System.out.println("Bienvenido de vuelta Usuario \n")
                     System.out.println("ESTADO: La radio esta ENCENDIDA.\n");
                 }
             }
