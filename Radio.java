@@ -6,15 +6,15 @@ public class Radio implements iRadio{
     private boolean state;
     private String frequency;
     private double station;
-    private double[] botonam;
-    private double[] botonfm;
+    private double[] botonAm;
+    private double[] botonFm;
 
     public Radio(boolean state) {
         this.state = state;
         frequency = "fm";
         station = 87.9;
-        botonam = new double[] {530,530,530,530,530,530,530,530,530,530,530,530};
-        botonfm = new double[] {87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9};
+        botonAm = new double[] {530,530,530,530,530,530,530,530,530,530,530,530};
+        botonFm = new double[] {87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9};
     }
 //------------------------------------------------------------------------------
     @Override
@@ -47,10 +47,10 @@ public class Radio implements iRadio{
     public void setStation(int position){
         position = position - 1;
         if(frequency.equals("am")){
-            station = botonam[position];
+            station = botonAm[position];
         }
         if(frequency.equals("fm")){
-            station = botonfm[position];
+            station = botonFm[position];
         }
         getStation();
     }
@@ -93,10 +93,10 @@ public class Radio implements iRadio{
     public void setMemory(int position){
         position = position - 1;
         if(frequency.equals("am")){
-            botonam[position] = station;
+            botonAm[position] = station;
         }
         if(frequency.equals("fm")){
-            botonfm[position] = station;
+            botonFm[position] = station;
         }
     }
 
