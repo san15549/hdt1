@@ -2,13 +2,15 @@
  * @author Carlo David Sanchinelli, Juan Pablo Zea, Luis Najera
  * @version 13.07.16
  */
+/**Se crea la clase de radio que implementara la clase principal "main" atribuyendole las funciones declaradas en esta clase*/
 public class Radio implements iRadio{
+    /**Se declaran los tipos que llevaran cada cariable*/
     private boolean state;
     private String frequency;
     private double station;
     private double[] botonAm;
     private double[] botonFm;
-
+    /**Se declaran los valores predeterminados de la clase Radio, que posteriormente seran llamadas dentro de las funciones*/
     public Radio(boolean state) {
         this.state = state;
         frequency = "fm";
@@ -17,6 +19,7 @@ public class Radio implements iRadio{
         botonFm = new double[] {87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9};
     }
 //------------------------------------------------------------------------------
+    /**Se declaran los diferentes metodos, que retornaran si es algo o si es un void*/
     @Override
     public void OnOff(){
         state = !state;
@@ -42,7 +45,7 @@ public class Radio implements iRadio{
         String station2 = String.valueOf(station);
         return station2;
     }
-
+    /**Se declaran ciclos para dar opcion de retorno o salida*/
     @Override
     public void setStation(int position){
         position = position - 1;
@@ -54,7 +57,7 @@ public class Radio implements iRadio{
         }
         getStation();
     }
-
+    /**Se declara la programación defensiva, no permitiendole al usuario pasarse del parametro a la hora de cambiar de estación deacuerdo a lo predeterminado*/
     @Override
     public void Forward(){
         if(frequency.equals("am") && station<=1610){
@@ -99,10 +102,3 @@ public class Radio implements iRadio{
             botonFm[position] = station;
         }
     }
-
-    @Override
-    public String toString(){ 
-        String texto = "ESTADO: \nFrecuencia:" + frequency + "\nEstacion:" + station + "\n";
-        return texto;
-    }
-}
