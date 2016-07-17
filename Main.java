@@ -1,5 +1,7 @@
 import java.util.Scanner;
 /**
+ * @place Universidad del Valle de Guatemala
+ * @class Algoritmos y Estructuras de Datos
  * @author Carlo David Sanchinelli, Juan Pablo Zea, Luis Najera
  * @version 13.07.16
  */
@@ -7,19 +9,22 @@ public class HDT1{
     /**
      * @param args the command line arguments
      */
+    /**Se crea la clase principal, junto con los scanners que nos permitira que el usuario ingrese valores*/
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         Radio radio = new Radio(false);
         boolean run = true;
-        
+        /**Se define los mensajes de bienvenida al usuario, definiendo una interfas amigable con el usuario*/
         System.out.println("BIENVENIDOS A LA RADIO CALUJU");
-	System.out.println("Ingrese ON para encender y OFF para apagar la radio.");
+    System.out.println("Ingrese ON para encender y OFF para apagar la radio.");
+    /**Se establese un ciclo para definir el estado del radio*/
         while (run==true){     
             while (radio.isOn() == true){
                 String toString = radio.toString();
                 System.out.println(toString);
                 System.out.println("Ingrese un comando:");
                 String comando = teclado.nextLine();
+                /**Se definen los metodos como botones, adelantar y retroceder estaciones; que llaman las funciones de la otra clase llamada Radio*/
                 if(comando.equals("OFF")){
                     radio.OnOff();
                 }
@@ -79,6 +84,7 @@ public class HDT1{
                     int position = Integer.parseInt(comando);
                     radio.setStation(position);
                 }
+                /**Se definen los metodos que llaman funciones de la otra clase, como Forward y Backward y se guarda en memoria la estación seleccionada*/
                 if(comando.equals("f")){
                     radio.Forward();
                 }
@@ -123,6 +129,7 @@ public class HDT1{
                 }
                 
             }
+            /**Se define otro ciclo para definir el estado finanl de la radio, si mantenerse encendida o mostrar el mensaje de apagada*/
             while (radio.isOn() == false){
                 System.out.println("Hasta Pronto Usuario, nos vemos luego.\n")
                 System.out.println("ESTADO: La radio esta APAGADA.\n");
