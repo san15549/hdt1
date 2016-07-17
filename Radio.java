@@ -1,4 +1,6 @@
 /**
+ * @place Universidad del Valle de Guatemala
+ * @class Algoritmos y Estructuras de Datos
  * @author Carlo David Sanchinelli, Juan Pablo Zea, Luis Najera
  * @version 13.07.16
  */
