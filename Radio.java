@@ -102,3 +102,10 @@ public class Radio implements iRadio{
             botonFm[position] = station;
         }
     }
+    /**Se declara el ToString que sera encargado de retornar en pantalla la información seleccionada por el usuario*/
+    @Override
+    public String toString(){ 
+        String texto = "ESTADO: \nFrecuencia:" + frequency + "\nEstacion:" + station + "\n";
+        return texto;
+    }
+}
