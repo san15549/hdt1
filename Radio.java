@@ -1,66 +1,61 @@
 /**
- * @place Universidad del Valle de Guatemala
- * @class Algoritmos y Estructuras de Datos
  * @author Carlo David Sanchinelli, Juan Pablo Zea, Luis Najera
  * @version 13.07.16
  */
-/**Se crea la clase de radio que implementara la clase principal "main" atribuyendole las funciones declaradas en esta clase*/
 public class Radio implements iRadio{
-    /**Se declaran los tipos que llevaran cada cariable*/
     private boolean state;
     private String frequency;
     private double station;
-    private double[] botonAm;
-    private double[] botonFm;
-    /**Se declaran los valores predeterminados de la clase Radio, que posteriormente seran llamadas dentro de las funciones*/
+    private double[] botonam;
+    private double[] botonfm;
+
     public Radio(boolean state) {
         this.state = state;
         frequency = "fm";
         station = 87.9;
-        botonAm = new double[] {530,530,530,530,530,530,530,530,530,530,530,530};
-        botonFm = new double[] {87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9};
+        botonam = new double[] {530,530,530,530,530,530,530,530,530,530,530,530};
+        botonfm = new double[] {87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9,87.9};
     }
 //------------------------------------------------------------------------------
-    /**Se declaran los diferentes metodos, que retornaran si es algo o si es un void*/
-    @Override
+    
     public void OnOff(){
         state = !state;
     }
 
-    @Override
+    
     public boolean isOn(){
         return state;
     }
 
-    @Override
+    
     public String getFrequency(){
         return frequency;
     }
 
-    @Override
+    
     public void setFrequency(String frequency){
         this.frequency = frequency;
     }
 
-    @Override
+    
     public String getStation(){
         String station2 = String.valueOf(station);
         return station2;
     }
-    /**Se declaran ciclos para dar opcion de retorno o salida*/
-    @Override
+
+    
     public void setStation(int position){
         position = position - 1;
         if(frequency.equals("am")){
-            station = botonAm[position];
+            station = botonam[position];
         }
         if(frequency.equals("fm")){
-            station = botonFm[position];
+            station = botonfm[position];
         }
         getStation();
     }
-    /**Se declara la programación defensiva, no permitiendole al usuario pasarse del parametro a la hora de cambiar de estación deacuerdo a lo predeterminado*/
-    @Override
+
+    
     public void Forward(){
         if(frequency.equals("am") && station<=1610){
             if(station==1610){
@@ -77,7 +72,7 @@ public class Radio implements iRadio{
         }
     }
 
-    @Override
+    
     public void Backward(){
         if(frequency.equals("am") && station>=530){
             if(station==530){
@@ -94,20 +89,20 @@ public class Radio implements iRadio{
         }
     }
 
-    @Override
+    
     public void setMemory(int position){
         position = position - 1;
         if(frequency.equals("am")){
-            botonAm[position] = station;
+            botonam[position] = station;
         }
         if(frequency.equals("fm")){
-            botonFm[position] = station;
+            botonfm[position] = station;
         }
     }
-    /**Se declara el ToString que sera encargado de retornar en pantalla la información seleccionada por el usuario*/
-    @Override
+
+    
     public String toString(){ 
-        String texto = "ESTADO: \nFrecuencia:" + frequency + "\nEstacion:" + station + "\n";
+        String texto = "\nESTADO: \nFrecuencia:" + frequency + "\nEstacion:" + station + "\n";
         return texto;
     }
 }
